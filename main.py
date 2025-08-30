@@ -1,15 +1,11 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-"""
-Need to get rid of prices above 1000 - this is the problem - people misinputed stuff
-"""
-
 def cleaning_data(listings):
     #Will be doing data cleaning - there are many null columns and rows
 
     listings=listings.drop(listings.columns[[4,17]],axis=1)#gets rid of all columns with just null values (i.e, neighbourhood count and license)
-
+    listings=listings[listings["price"] < 1500]
     return listings.dropna()#gets rid of all rows with null columns
 
 # Can now start solving problems
@@ -180,12 +176,32 @@ def ppl_w_highest_avg_price(listings):
     Bugged Pricing Column
     """
 
+def most_amount_of_listings_vs_highest_avg_price(listings):
+    #Calculate the average price by neighbourhood
+    average_price=listings.groupby('calculated_host_listings_count')['price'].mean().sort_values(ascending=False)
+    highest_average_price=average_price.head(10)
+    lowest_average_price=average_price.tail(10)
+
+    # Plot the results
+    highest_average_price.plot(kind="bar",title="Average Price by Host")
+    plt.ylabel("Average Price")
+    plt.xlabel("Listings amount")
+    plt.tight_layout()
+    plt.show()
+
+    lowest_average_price.plot(kind="bar",title="Average Price by Host")
+    plt.ylabel("Average Price")
+    plt.xlabel("Listings amount")
+    plt.tight_layout()
+    plt.show()
+    """
+    Bugged Pricing Column
+    """
+
 def main():
     listings=pd.read_csv('listingss.csv')
     cleaned_listings=cleaning_data(listings)
-    """
-    Already Tested
-
+    
     price_by_neighbourhood(cleaned_listings)
     plot_avg_minimum_nights_by_neighbourhood(cleaned_listings)
     price_by_reviews_per_month_bar(cleaned_listings)
@@ -196,8 +212,8 @@ def main():
     price_by_min_nights(cleaned_listings)
     availability_by_minimum_nights_scatter(cleaned_listings)
     price_by_availability_scatter(cleaned_listings)
-
-    """
     ppl_w_highest_avg_price(cleaned_listings)
+    most_amount_of_listings_vs_highest_avg_price(cleaned_listings)
+
 
 main()
