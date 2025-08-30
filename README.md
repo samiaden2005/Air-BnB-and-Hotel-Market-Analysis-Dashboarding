@@ -8,8 +8,10 @@ What I will be doing:
 
 Make a graph showing:
 people with the most amount of listings
-people with the highest average price (must have at least two listings)
+people with the highest average price
 average prices differentiated between room types
 prices vs availability
 prices vs minimum nights
-prices vs neighbourhood
+minimum nights vs nighbourhood
+neighbourhood vs minimum nights - completed
+prices vs neighbourhood - completed
