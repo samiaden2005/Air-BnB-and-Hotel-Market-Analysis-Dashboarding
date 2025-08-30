@@ -1,6 +1,14 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
+"""
+Need to deal with:
+
+The report (i.e the README)
+Make plots much more readable
+Adjust the labels, especially for the later ones
+"""
+
 def cleaning_data(listings):
     #Will be doing data cleaning - there are many null columns and rows
 
