@@ -12,6 +12,8 @@ people with the highest average price
 average prices differentiated between room types
 prices vs availability
 prices vs minimum nights
-minimum nights vs nighbourhood
+reviews by reviews per month
+price by reviews
+price by reviews per month
 neighbourhood vs minimum nights - completed
 prices vs neighbourhood - completed

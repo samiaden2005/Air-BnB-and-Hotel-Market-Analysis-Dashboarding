@@ -40,15 +40,58 @@ def plot_avg_minimum_nights_by_neighbourhood(listings):
     plt.tight_layout()
     plt.show()
     """
+    Summary Statistics
     Greenwhich and Tower Hamlets have the highest minimum nights (8 days average)
     Sutton is the lowest (3 days average)
     The others decrease slowly
     """
 
+def price_by_reviews_per_month(listings):#will be a scatter chart
+    # Calculate the average minimum nights required per neighbourhood
+    # Plot the results
+    listings.plot(kind="scatter", title="Reviews Per Month Relation To Price",x="reviews_per_month",y="price")
+    plt.xlabel("Reviews Per Month")
+    plt.ylabel("Price (£)")
+    plt.tight_layout()
+    plt.show()
+    """
+    Summary Statistics
+    Shows there is no relation between price and the amount of reviews per month
+    """
+def price_by_reviews_scatter(listings):#will be a scatter chart
+    # Plot the results
+    listings.plot(kind="scatter", title="Reviews Per Month Relation To Price",x="reviews_per_month",y="price")
+    plt.xlabel("Reviews Per Month")
+    plt.ylabel("Price (£)")
+    plt.tight_layout()
+    plt.show()
+    """
+    Summary Statistics
+    Shows there is no relation between price and the amount of reviews per month
+    """
+
+def price_by_reviews_bar(listings):#will be a bar chart
+    # Calculate the average minimum nights required per neighbourhood
+    # Plot the results
+    listings.plot(kind="scatter", title="Reviews Per Month Relation To Price",x="reviews_per_month",y="price")
+    plt.xlabel("Reviews Per Month")
+    plt.ylabel("Price (£)")
+    plt.tight_layout()
+    plt.show()
+    """
+    Summary Statistics
+    Shows there is no relation between price and the amount of reviews per month
+    """
+
 def main():
     listings=pd.read_csv('listingss.csv')
     cleaned_listings=cleaning_data(listings)
+    """
+    Already Tested
+
     price_by_neighbourhood(cleaned_listings)
     plot_avg_minimum_nights_by_neighbourhood(cleaned_listings)
+    """
+    price_by_reviews_per_month(cleaned_listings)
 
 main()
