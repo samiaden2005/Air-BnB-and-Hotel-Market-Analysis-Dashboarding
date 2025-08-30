@@ -1,6 +1,9 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
+"""
+Need to get rid of prices above 1000 - this is the problem - people misinputed stuff
+"""
 
 def cleaning_data(listings):
     #Will be doing data cleaning - there are many null columns and rows
@@ -149,6 +152,34 @@ def price_by_availability_scatter(listings):
     plt.tight_layout()
     plt.show()
 
+def price_by_room_type(listings):
+    #Calculate the average price by neighbourhood
+    average_price=listings.groupby('room_type')['price'].mean().sort_values(ascending=False)
+    # Plot the results
+    average_price.plot(kind="bar",title="Average Price by Room Type")
+    plt.ylabel("Average Price")
+    plt.xlabel("Room Type")
+    plt.tight_layout()
+    plt.show()
+    """
+    Unsurprising statistics - a shared room is less expensive than a hotel room
+    """
+
+def ppl_w_highest_avg_price(listings):
+    #Calculate the average price by neighbourhood
+    average_price=listings.groupby('host_id')['price'].mean().sort_values(ascending=False)
+    average_price=average_price.head(10)
+
+    # Plot the results
+    average_price.plot(kind="bar",title="Average Price by Host")
+    plt.ylabel("Average Price")
+    plt.xlabel("Host ID")
+    plt.tight_layout()
+    plt.show()
+    """
+    Bugged Pricing Column
+    """
+
 def main():
     listings=pd.read_csv('listingss.csv')
     cleaned_listings=cleaning_data(listings)
@@ -167,5 +198,6 @@ def main():
     price_by_availability_scatter(cleaned_listings)
 
     """
+    ppl_w_highest_avg_price(cleaned_listings)
 
 main()

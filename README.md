@@ -7,11 +7,10 @@ Uses https://www.kaggle.com/datasets/whenamancodes/london-uk-airbnb-open-data
 What I will be doing:
 
 Make a graph showing:
-people with the most amount of listings
-people with the highest average price
-average prices differentiated between room types
+price with the most amount of listings
+people with the highest average price - completed
+average prices differentiated between room types - completed
 prices by availability scatter chart - completed
-
 availability by minimum nights - completed
 prices by availability bar chart - completed
 prices by minimum nights bar chart - completed
