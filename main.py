@@ -99,6 +99,56 @@ def price_by_reviews_bar(listings):#will be a bar chart
     Shows low price means high price and many reviews means low price, but this price is very close to a review count significantly lower.
     """
 
+def number_of_reviews_by_reviews_per_month_scatter(listings):#will be a scatter chart
+    # Plot the results
+    listings.plot(kind="scatter", title="Number of Reviews Relation To Reviews Per Month Scatter Plot",x="number_of_reviews",y="reviews_per_month")
+    plt.xlabel("Number Of Reviews")
+    plt.ylabel("Reviews Per Month")
+    plt.tight_layout()
+    plt.show()
+    """
+    Summary Statistics
+    Very Slight Correlation but not significant -correlation is 0.45
+    """
+
+def price_by_min_nights(listings):
+    #Calculate the average price by neighbourhood
+    average_price=listings.groupby('minimum_nights')['price'].mean().sort_values(ascending=False)
+    # Plot the results
+    average_price.plot(kind="bar",title="Average price by minimum nights")
+    plt.ylabel("Average Price")
+    plt.xlabel("Minimum Nights")
+    plt.tight_layout()
+    plt.show()
+
+def price_by_availability_bar(listings):
+    #Calculate the average price by neighbourhood
+    average_price=listings.groupby('availability_365')['price'].mean().sort_values(ascending=False)
+    # Plot the results
+    average_price.plot(kind="bar",title="Average price by availability")
+    plt.ylabel("Average Price")
+    plt.xlabel("Availability")
+    plt.tight_layout()
+    plt.show()
+
+def availability_by_minimum_nights_scatter(listings):
+    #Calculate the average price by neighbourhood
+    # Plot the results
+    listings.plot(kind="scatter",title="Availability by minimum nights",x="availability_365",y="minimum_nights")
+    plt.ylabel("Minimum Nights")
+    plt.xlabel("Availability")
+    plt.tight_layout()
+    plt.show()
+
+def price_by_availability_scatter(listings):
+    #Calculate the average price by neighbourhood
+    listings.plot(kind="scatter",title="Availability by price",x="availability_365",y="price")
+    # Plot the results
+    plt.ylabel("Average Price")
+    plt.xlabel("Availability")
+    plt.tight_layout()
+    plt.show()
+
 def main():
     listings=pd.read_csv('listingss.csv')
     cleaned_listings=cleaning_data(listings)
@@ -110,8 +160,12 @@ def main():
     price_by_reviews_per_month_bar(cleaned_listings)
     price_by_reviews_per_month_scatter(cleaned_listings)
     price_by_reviews_scatter(cleaned_listings)
-    
-    """
     price_by_reviews_bar(cleaned_listings)
+    number_of_reviews_by_reviews_per_month_scatter(cleaned_listings)
+    price_by_min_nights(cleaned_listings)
+    availability_by_minimum_nights_scatter(cleaned_listings)
+    price_by_availability_scatter(cleaned_listings)
+
+    """
 
 main()

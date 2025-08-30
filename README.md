@@ -10,12 +10,15 @@ Make a graph showing:
 people with the most amount of listings
 people with the highest average price
 average prices differentiated between room types
-prices vs availability
-prices vs minimum nights
-reviews by reviews per month
+prices by availability scatter chart - completed
+
+availability by minimum nights - completed
+prices by availability bar chart - completed
+prices by minimum nights bar chart - completed
+reviews by reviews per month scatter graph - completed
 price by reviews bar chart - completed
 price by reviews scatter chart - completed
 price by reviews per month bar chart - completed
 price by reviews per month scatter graph - completed
-neighbourhood vs minimum nights - completed
-prices vs neighbourhood - completed
+neighbourhood vs minimum nights bar chart - completed
+prices vs neighbourhood bar chart - completed
