@@ -13,7 +13,9 @@ average prices differentiated between room types
 prices vs availability
 prices vs minimum nights
 reviews by reviews per month
-price by reviews
-price by reviews per month
+price by reviews bar chart - completed
+price by reviews scatter chart - completed
+price by reviews per month bar chart - completed
+price by reviews per month scatter graph - completed
 neighbourhood vs minimum nights - completed
 prices vs neighbourhood - completed

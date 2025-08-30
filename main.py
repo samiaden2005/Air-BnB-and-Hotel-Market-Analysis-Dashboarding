@@ -46,7 +46,7 @@ def plot_avg_minimum_nights_by_neighbourhood(listings):
     The others decrease slowly
     """
 
-def price_by_reviews_per_month(listings):#will be a scatter chart
+def price_by_reviews_per_month_scatter(listings):#will be a scatter chart
     # Calculate the average minimum nights required per neighbourhood
     # Plot the results
     listings.plot(kind="scatter", title="Reviews Per Month Relation To Price",x="reviews_per_month",y="price")
@@ -56,11 +56,14 @@ def price_by_reviews_per_month(listings):#will be a scatter chart
     plt.show()
     """
     Summary Statistics
-    Shows there is no relation between price and the amount of reviews per month
+    Shows there is no relation between price and the number of reviews per month
     """
-def price_by_reviews_scatter(listings):#will be a scatter chart
+
+def price_by_reviews_per_month_bar(listings):#will be a bar chart
+    # Calculate the average minimum nights required per neighbourhood
     # Plot the results
-    listings.plot(kind="scatter", title="Reviews Per Month Relation To Price",x="reviews_per_month",y="price")
+    reviews_per_month_avg_price=listings.groupby("reviews_per_month")["price"].mean().sort_values(ascending=False)
+    reviews_per_month_avg_price.plot(kind="bar", title="Reviews Per Month Relation To Price")
     plt.xlabel("Reviews Per Month")
     plt.ylabel("Price (£)")
     plt.tight_layout()
@@ -70,17 +73,30 @@ def price_by_reviews_scatter(listings):#will be a scatter chart
     Shows there is no relation between price and the amount of reviews per month
     """
 
-def price_by_reviews_bar(listings):#will be a bar chart
-    # Calculate the average minimum nights required per neighbourhood
+def price_by_reviews_scatter(listings):#will be a scatter chart
     # Plot the results
-    listings.plot(kind="scatter", title="Reviews Per Month Relation To Price",x="reviews_per_month",y="price")
-    plt.xlabel("Reviews Per Month")
+    listings.plot(kind="scatter", title="Number of Reviews Relation To Price Scatter Plot",x="number_of_reviews",y="price")
+    plt.xlabel("Number Of Reviews")
     plt.ylabel("Price (£)")
     plt.tight_layout()
     plt.show()
     """
     Summary Statistics
-    Shows there is no relation between price and the amount of reviews per month
+    Shows there is no relation between price and the amount of reviews, can be calculated using correlation
+    """
+
+def price_by_reviews_bar(listings):#will be a bar chart
+    # Calculate the average minimum nights required per neighbourhood
+    # Plot the results
+    reviews_avg_price=listings.groupby("reviews_per_month")["price"].mean().sort_values(ascending=False)
+    reviews_avg_price.plot(kind="bar", title="Reviews Per Month Relation To Price")
+    plt.xlabel("Number Of Reviews")
+    plt.ylabel("Price (£)")
+    plt.tight_layout()
+    plt.show()
+    """
+    Summary Statistics
+    Shows low price means high price and many reviews means low price, but this price is very close to a review count significantly lower.
     """
 
 def main():
@@ -91,7 +107,11 @@ def main():
 
     price_by_neighbourhood(cleaned_listings)
     plot_avg_minimum_nights_by_neighbourhood(cleaned_listings)
+    price_by_reviews_per_month_bar(cleaned_listings)
+    price_by_reviews_per_month_scatter(cleaned_listings)
+    price_by_reviews_scatter(cleaned_listings)
+    
     """
-    price_by_reviews_per_month(cleaned_listings)
+    price_by_reviews_bar(cleaned_listings)
 
 main()
