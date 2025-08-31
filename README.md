@@ -31,13 +31,12 @@ The EDA process began with using `pandas.info()` to understand the column names 
 
 Unsurprisingly, the analysis found that the three most expensive boroughs in London are the City of London, Westminster, and Kensington and Chelsea. These centrally located, wealthy areas have significantly higher average prices than all other boroughs. The price drop-off is quite sharp after these top three, with prices decreasing relatively linearly in other areas.
 
-\<br\>
+
 
 ### Average Minimum Nights by Neighbourhood
 ![Average Minimum Nights by Neighbourhood graph](images/Average%20Minimum%20NIghts%20By%20Neighbourhood.png)
 The analysis showed that average minimum nights are generally consistent across most boroughs. While a few exceptions exist, particularly in the City of London—which could be due to its high concentration of business travelers—there is no strong relationship between a neighbourhood's price and its average minimum nights.
 
-\<br\>
 
 ### Price and Reviews per month
 ![Price and Reviews graph](images/Revies%20Per%20Month%20Relation%20To%20Price.png)
@@ -46,19 +45,18 @@ The relationship between a listing's price and its number of reviews is not very
   * **Higher prices** tend to be associated with fewer reviews, which makes sense as new or more exclusive listings might not have accumulated many reviews yet.
   * A much clearer relationship is the inverse: a large number of reviews typically correlates with a lower price, likely reflecting high-volume, budget-friendly listings.
 
-\<br\>
+
 
 ### Availability by Price
 ![Availability by Price graph](images/Availability%20by%20Price.png)
 The analysis showed that "cheap places" have high availability throughout the year, but finding more expensive places is significantly more difficult, suggesting they may have lower overall availability.
 
-\<br\>
+
 
 ### Reviews and Price by Room Type
 ![Reviews and Price by Room Type Graph](images/Number%20of%20Reviews%20Relation%20To%20Price.png)
 The analysis on room type revealed that hotels are the most expensive, followed by private rooms and finally shared rooms, which are the cheapest.
 
-\<br\>
 
 ### Number of Reviews vs. Reviews Per Month
 ![Number of Reviews vs. Reviews Per Month Graph](images/Number%20Of%20Reviews%20Relation%20to%20Reviews%20Per%20Month.png)
