@@ -2,3 +2,9 @@ venv/
 __pycache__/
 listingss.csv
 listings_info.txt
+Availability by Price.png
+Average Minimum NIghts By Neighbourhood.png
+Average Price By Neighbourhood.png
+Number of Reviews Relation To Price.png
+Number Of Reviews Relation to Reviews Per Month.png
+Revies Per Month Relation To Price.png
