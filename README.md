@@ -28,18 +28,20 @@ The EDA process began with using `pandas.info()` to understand the column names 
 ### Price by Neighbourhood
 
 ![Price By NeighbourHood graph](images/Average%20Price%20By%20Neighbourhood.png)
-
+<br>
 Unsurprisingly, the analysis found that the three most expensive boroughs in London are the City of London, Westminster, and Kensington and Chelsea. These centrally located, wealthy areas have significantly higher average prices than all other boroughs. The price drop-off is quite sharp after these top three, with prices decreasing relatively linearly in other areas.
 
 
 
 ### Average Minimum Nights by Neighbourhood
 ![Average Minimum Nights by Neighbourhood graph](images/Average%20Minimum%20NIghts%20By%20Neighbourhood.png)
+<br>
 The analysis showed that average minimum nights are generally consistent across most boroughs. While a few exceptions exist, particularly in the City of London—which could be due to its high concentration of business travelers—there is no strong relationship between a neighbourhood's price and its average minimum nights.
 
 
 ### Price and Reviews per month
 ![Price and Reviews graph](images/Revies%20Per%20Month%20Relation%20To%20Price.png)
+<br>
 The relationship between a listing's price and its number of reviews is not very clear, but some trends were observed:
 
   * **Higher prices** tend to be associated with fewer reviews, which makes sense as new or more exclusive listings might not have accumulated many reviews yet.
@@ -49,17 +51,20 @@ The relationship between a listing's price and its number of reviews is not very
 
 ### Availability by Price
 ![Availability by Price graph](images/Availability%20by%20Price.png)
+<br>
 The analysis showed that "cheap places" have high availability throughout the year, but finding more expensive places is significantly more difficult, suggesting they may have lower overall availability.
 
 
 
 ### Reviews and Price by Room Type
 ![Reviews and Price by Room Type Graph](images/Number%20of%20Reviews%20Relation%20To%20Price.png)
+<br>
 The analysis on room type revealed that hotels are the most expensive, followed by private rooms and finally shared rooms, which are the cheapest.
 
 
 ### Number of Reviews vs. Reviews Per Month
 ![Number of Reviews vs. Reviews Per Month Graph](images/Number%20Of%20Reviews%20Relation%20to%20Reviews%20Per%20Month.png)
+<br>
 A slight positive correlation was found between the total number of reviews and reviews per month, but the relationship is not significant (correlation coefficient of 0.45). This lack of a strong relationship is likely due to the fact that some listings have been active for a very long time, giving them a high total review count but a low monthly rate.
 
 ##  Conclusions and Future Improvements
