@@ -14,6 +14,7 @@ def cleaning_data(listings):
 
     listings=listings.drop(listings.columns[[4,17]],axis=1)#gets rid of all columns with just null values (i.e, neighbourhood count and license)
     listings=listings[listings["price"] < 1500]
+    listings=listings[listings["minimum_nights"] < 50]
     return listings.dropna()#gets rid of all rows with null columns
 
 # Can now start solving problems
