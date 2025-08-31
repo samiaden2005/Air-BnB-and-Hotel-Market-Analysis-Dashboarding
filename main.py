@@ -221,6 +221,7 @@ def main():
     price_by_min_nights(cleaned_listings)
     availability_by_minimum_nights_scatter(cleaned_listings)
     price_by_availability_scatter(cleaned_listings)
+    price_by_room_type(cleaned_listings)
     ppl_w_highest_avg_price(cleaned_listings)
     most_amount_of_listings_vs_highest_avg_price(cleaned_listings)
 
